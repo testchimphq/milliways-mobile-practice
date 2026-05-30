@@ -1,62 +1,108 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# --- OS & editor ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+*.iml
 
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+tests/.env-*
+
+# --- Node.js ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# --- Backend ---
+backend/node_modules/
+
+# --- SmartTests / Mobilewright (created after /testchimp init) ---
+tests/node_modules/
+test-results/
+playwright-report/
+blob-report/
+mobilewright-report/
+.playwright/
+
+# --- Docker (local overrides only) ---
+docker-compose.override.yml
+
+# --- Xcode / iOS ---
 ## User settings
 xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 
-## Obj-C/Swift specific
+## Obj-C / Swift
 *.hmap
-
-## App packaging
 *.ipa
-*.dSYM.zip
 *.dSYM
+*.dSYM.zip
+*.app
+*.xcarchive
+
+## Build & derived data
+ios/build/
+DerivedData/
+.build/
+.swiftpm/
+
+## Swift Package Manager (resolved locally; regenerate in Xcode)
+**/Package.resolved
 
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
-
-.build/
-
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
-
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+## CocoaPods / Carthage
+Pods/
 Carthage/Build/
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
+## fastlane
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# --- Android / Gradle ---
+*.hprof
+android/local.properties
+android/.gradle/
+android/build/
+android/app/build/
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# --- Binaries & compiled artifacts (catch-all) ---
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
